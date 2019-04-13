@@ -1,0 +1,14 @@
+        BODY    {font:x-small 'Verdana'; margin-left:2em;color:black;text-decoration:none;
+                 text-align:left}
+        .bNone  {display:none}
+        .hidenMe{line-height:270%;visibility:hidden;}
+        .e      {width:27.6em;position:static}
+        .e1     {position:static}
+        .e2     {display:none; position:absolute;top:13.34em;width:27.6em}
+        .tx     {position:relative}
+        .name   {font-weight:bold;font-size:162.5%;position:relative}
+        .MOTHER {position:absolute;top:0em;width:27.6em}
+        .FATHER {position:absolute;top:0em;left:-27.6em;width:27.6em}
+        .PERSON {position:relative;top:100em;left:1em;width:27.6em}
+        .SPOUSE {position:absolute;top:0em;width:27.6em}
+        .scroll {position:absolute;top:150em;color:white; }

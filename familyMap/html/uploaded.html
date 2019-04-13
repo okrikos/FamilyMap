@@ -1,0 +1,60 @@
+<?
+$finish = true;
+$login = $HTTP_POST_VARS["login"];
+$pass = $HTTP_POST_VARS["pass"];
+if (trim($login) != $login || trim($pass) != $pass ) {
+?>
+<p style="color:red">Password or login have whitespace</p>
+<?
+}
+else
+{
+if (strlen($login) < 5 || strlen($pass) < 5) {
+?>
+<p style="color:red">Password or Login are too short - minimum 5 symbols</p>
+<?
+}
+else
+{
+$path= "/usr/java/tomcat/webapps/ROOT/WEB-INF/data/";
+$upload = $path .$login.".".$pass; 
+$coun = 0; 
+$d = dir($path);
+while($entry=$d->read())
+{
+    $pos = strpos ($entry, $login . ".");
+    if ( $pos !== false  && $pos == 0 && $entry != ($login . "." . $pass))
+    {
+$finish = false;
+?> 
+The data set named "<? echo $login; ?>" already exists. If it is your data set,
+enter correct password to replace existing data set, otherwise, 
+select another login
+<?
+}
+}
+$d->close();
+
+if ($finish)
+{
+if (is_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'])) {
+
+move_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'], $upload);
+chmod ($upload, 644);
+?>
+Your file has been successfully uploaded<BR>
+<? require("../php/view.php"); ?> 
+<p>
+<a href="user.html">Back</a> to the user home
+<p>
+<?
+} 
+else 
+{
+echo "Possible file upload attack. Filename: " . $HTTP_POST_FILES['userfile']['name'];
+}
+}
+}
+}
+?>
+

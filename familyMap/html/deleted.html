@@ -1,0 +1,24 @@
+<?
+$login = $HTTP_POST_VARS["login"];
+$pass = $HTTP_POST_VARS["pass"];
+$path= "/usr/java/tomcat/webapps/ROOT/data/".$login.".".$pass;
+if (file_exists( $path)) { 
+unlink( $path); 
+?>
+<p>Data set <? echo $login; ?> deleted!</p>
+<? require("../php/upload.php"); ?>
+<p>
+<a href="user.html">Back</a> to the user home
+<p>
+
+<? 
+} else {
+?>
+<p style="color:red"><b>Incorrect login or password</b></p>
+    <? require("../php/delete.php"); ?>
+<p>
+<a href="user.html">Back</a> to the user home
+<p>
+<?
+}
+?>

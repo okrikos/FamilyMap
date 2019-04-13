@@ -1,0 +1,13 @@
+        .y      {position:absolute;top:0em;width:6em}
+        .bHide  {visibility:hidden;position:relative;}
+        .fa     {position:absolute;top:0em;left:28em}
+        .pa     {position:absolute;top:-13.8em;left: 27.6em}
+        .re     {cursor:hand;position:absolute;top:0em;border-style:outset;background-color:white;
+                 width:2.3em; height:2.3em;left:1em}
+        .upper  {position:absolute;left:-25em;top:1.24em;width:37.2em; height:0.46em}
+        .lower  {position:absolute;left:-2.8em;top:1.24em;width:24em; height:0.46em}
+        .slope  {position:absolute;left:-11.67em;width:12.8em; height:12.8em;top:1.4em}
+        .vertical{position:absolute;left:0.7em;top: -10.5em;width:0.46em; height:10.8em}
+        .box    {position:absolute;left:-2.7em; top:0em;width:28.5em; height:10.58em}
+        .button {cursor:hand;width:2.3em;height:2.3em;border-style:outset}
+        .keygif {position:absolute;left:-3.6em; top:3.033em;width:2.3em; height:2.3em}      

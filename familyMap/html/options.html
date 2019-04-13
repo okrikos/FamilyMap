@@ -1,0 +1,103 @@
+<title>Options for Family Map</title>
+<CENTER><H1>Options for Family Map</H1></CENTER>
+
+<table border="1">
+<tr>
+<td valign="top">
+<b>Data set</b>
+</td>
+<td>
+Case-sensitibe name for the data set, uploaded to the tyoma.com server. It is
+a good practice to restrict name to the alpha-numeric characters, including 
+undescore "_", otherwise good results cannot be quarantied. No warning is
+given when you misspell the data set name, but the default data set "tyoma" is
+loaded.  
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>Person ID</b>
+</td>
+<td>
+The initial person from the data set above. Normally, you are getting both
+data set and person Id from the family map author. I would say, those two 
+parametrs are a kind of mandatory fields. In case you know only data set name, 
+placing Id to 1 is a good initial guess. You also can ask the program to select
+some Person Id from the data set.<br/>
+The field must be an integer, with one exception: the old GEDCOM style 
+indicator of person's ID in the format @I123@ is also accepted.  
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>Language</b>
+</td>
+<td>
+The language of the Family Map. Default selection in most cases gives English
+for the labels and family relations calculations. If you can read Cyrilic
+and have some Russian heritage, you can switch into the Russian mode. For the
+data set created with the one of Cyrilic encodings, the default mode is 
+Russian, so you can set language back to English. 
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>Legacy mode</b>
+</td>
+<td>
+The great majority of the modern browsers are capable of displaing formated XML
+web pages. In case when page behaves strange, buttons does not work, nothing or
+all displayed, etc., you can try to turn legacy mode On. In legacy mode server
+makes all operations on its side, sending final file in html format to the 
+browser. Althouth this mode is much more conventional, it is much less
+convient, because the size of the html file can be as much as 50(!) larger 
+compare to xml file. For the large data sets, like default "tyoma" and 
+the modem connections, the loading of the initial map would be rather slow in
+legacy mode and visitor have no fun on reloading all data again on changing 
+key person. <br/>
+Legacy mode is automatically turned on for Internet Explorer 4 and 5, althought
+some Internet Explorer 5.5 are capable operating in the xml mode. 
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>Encoding</b>
+</td>
+<td>
+Encoding of the data set. When it Cyrilic (ISO or Windows) and clearly
+specified in the data set ("CHAR" field), auto encoding takes value from the 
+data set. If encoding in the data set is unknown or undefined, the programm 
+tryes to guess it, setting it to the Windows Cyrilic when unusally large 
+percentage of the characters in the names are from the upper half of the 
+ASCII table is found and to the Latin 1 otherwise. You can always force the 
+programm to use particular encoding.<br/>
+The list of the possible encoding is actually missing several important 
+entries:
+<ul>
+<li>
+<b>ansel</b> - The standard encoding for the GEDCOM files. Real legacy encoding,
+not supported by Java standards. Still have to be done. 
+</li>
+<li>
+<b>UTF</b> - The standard encoding for the modern multi-language programs. 
+Will be added soon. 
+</li>
+<li>
+<b>DOS, Mac</b> - It is always possible to get away with Windows encoding... 
+</li>
+</uL>     
+</td>
+</tr>
+<tr>
+<td valign="top">
+<b>Browser</b>
+</td>
+<td>
+The two categories of supported browsers are Microsoft Internet Explorer, 
+(including old versions) and Gecko-based browsers: Firefox, Mozilla, 
+Netscape 6 and up. For the other browsers you can try either options, 
+switching on legacy mode. For example, Safari looks OK in legacy mode for 
+Firefox. 
+</td>
+</tr>
+</table>

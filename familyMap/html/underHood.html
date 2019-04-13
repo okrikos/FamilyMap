@@ -1,0 +1,89 @@
+<title>Program description and download</title>
+<CENTER><H1>Program description and download</H1>
+</CENTER>
+<h3>General description</h3> 
+
+Some people asked me how it works and what technologies were used:
+<OL>
+<LI>The visitor creates the Genealogy information file (gedcom file) in <B>gedcom</B> standard. It it a plain text file that
+can be viewed by a regular word processor. 
+</LI>
+The upload page uses INPUT TYPE="file" <B>HTML</B> tag to upload data into the server, which is <B>Apache</B> 
+running under the <B>Linux (Debian)</B>.
+<LI>The administative interface is performed in <B>PHP</B>.
+</LI>
+<LI>
+The <B>JavaServlet</B> runs under <B>Tomcat</B> parse gedcom file and output 
+<B>XML</B> file goes directly to the visitor's browser. You can see the data
+ in XML data by View Source command.
+<LI>
+The XML transformed into the viewable format by <B>XSLT</B>, which also gets uploaded into a visitor's browser. Unlike an XML file with
+ data, which is re-generated whenever you decide to change the "key" person, an XSLT file is static.  
+</LI>
+<LI>
+In the legacy mode the XSLT transformation is done on the server using 
+Apache <b>Xalan/Xerces</b> libraries. 
+</LI>
+<LI>
+Sizes, colors, location of nodes, etc. are defined through <B>CSS</B> (Cascading Style Sheets)
+</LI>
+<LI>
+Interactivity, i.e. openning - closing branches is handled on the client's side using <B>JavaScript</B>, which is sometimes
+called <B>DHTML</B>. After opening the page, you can explore the whole Family Map off-line. 
+</LI>
+</OL>
+<h3>Downloads and contributions</h3>
+<p>You do not have to download and install Family Map Viewer, because the service is 
+freely avaliable at <a href="http://www.tyoma.com">www.tyoma.com</a> web site. 
+If you see some disadvanatage or bugs in the program, it probably would be 
+better if you report it to the author <a href="maito:tyoma@tyoma.com">
+tyoma@tyoma.com</a> to correct running version. </p>
+<p>
+Author also is also greatlly apreshiate futher internationalization, adding 
+more languages. If somebody is unhappy with the current skin, the contributions
+of the additional skins would be greatlly apreciated.    
+</p>
+<p>In case you willing to contribute new skin or language set, it is still not 
+needed to download and install software. You can simply save the XML file and 
+related XSL, CSS and js files on your computer and pertform development 
+using XSLT engine of your browser. After you done, mail new XSL/CSS to me and 
+I will drop it into the server.</p>
+<p>Finally, if you are really would like to run your own Family Map Viewer on
+your domain, or made serious contribution to the Java code, here is the source:
+<ul>
+<li>
+<a href="../source/familyMap.zip">web server part</a>
+</li>
+<li>
+<a href="../source/familyMap.jar">Java part</a>
+</li>
+</ul>
+</p> 
+<h3>Instalation notes</h3> 
+<ol>
+<li>
+Unzip familyMap.zip into the document root of your Apache server
+</li>
+<li>
+Deploy familyMap.jar into Tomcat server.
+</li>
+<li>
+Under application directory create the subdirectory named <u>data</u> and assign permisions 
+777 to it. The directory <u>data</u> should be on the same level as WEB-INF 
+directory.
+</li>
+<li>
+Adjust path to the <u>data</u> directory within php elements, located at familyMap/php
+directory. On my system it is <u>/usr/java/tomcat/webapps/ROOT/data</u>. 
+The element names are <u>upload.php</u> and <u>delete.php</u>  
+</li>
+<li>
+Adjust URL to the servlet in <u>view.php</u> element. On my system it is 
+<u>/servlet/familyMap</u>.   
+</li>
+<li>
+On my server, html pages are considered to be a PHP templates. If you restrict
+PHP only to pages with .php extenshion, you will have to rename files in 
+the familyMap/html directory, as a well as adjust links.
+</li>
+</ol>
